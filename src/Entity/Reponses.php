@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\QuestionsRepository;
+use App\Repository\ReponsesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=QuestionsRepository::class)
+ * @ORM\Entity(repositoryClass=ReponsesRepository::class)
  */
-class Questions
+class Reponses
 {
     /**
      * @ORM\Id
@@ -23,9 +23,9 @@ class Questions
     private $libelle;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="integer")
      */
-    private $is_multiple;
+    private $questions_id;
 
     public function getId(): ?int
     {
@@ -44,14 +44,14 @@ class Questions
         return $this;
     }
 
-    public function getIsMultiple(): ?bool
+    public function getQuestionsId(): ?int
     {
-        return $this->is_multiple;
+        return $this->questions_id;
     }
 
-    public function setIsMultiple(bool $is_multiple): self
+    public function setQuestionsId(int $questions_id): self
     {
-        $this->is_multiple = $is_multiple;
+        $this->questions_id = $questions_id;
 
         return $this;
     }
